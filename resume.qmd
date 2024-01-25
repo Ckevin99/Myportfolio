@@ -1,0 +1,34 @@
+---
+# use quarto markdown to 
+---
+
+
+<div style="text-align: center;">
+# Kevin Correia
+</div>
+# Skills
+<ul>
+  <li>Python</li>
+  <li>Front-end Development</li>
+  <li>Teamwork</li>
+  <li>Trilingual: English, Spanish and Portuguese</li>
+  <li>Java</li>
+  <li>C#</li>
+</ul>
+
+# Experience<br/>
+**Administration and IT Census Agent**<br>				                    
+IBGE (Brazilian Institute of Geography and Statistics)
+
+
+# Education
+
+**Bachelor of Science in Computer Science**<br/> <div>(In progress)  
+Brigham Young University – Idaho<br/><br/>
+
+**Certificate - Web and Computer Programming**<br/>
+Brigham Young University – Idaho<br/>
+
+During this certification I developed skills in functional programming (using Python), Front-End development (HTML, CSS and JS), and Object-Oriented Programming (using C#).
+   
+
