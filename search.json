@@ -58,9 +58,16 @@
   {
     "objectID": "cleansing.html",
     "href": "cleansing.html",
-    "title": "About me",
+    "title": "about me",
     "section": "",
-    "text": "Kevin Correia\n\n\nSkills\n\n\nPython\n\n\nFront-end Development\n\n\nTeamwork\n\n\nTrilingual: English, Spanish and Portuguese\n\n\nJava\n\n\nC#\n\n\n\n\nEducation\nBachelor of Science in Computer Science Brigham Young University – Idaho\nMarkDown Basics\n\n\n\n\n Back to top"
+    "text": "MarkDown Basics"
+  },
+  {
+    "objectID": "cleansing.html#title-2-header",
+    "href": "cleansing.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
   },
   {
     "objectID": "exploration.html",
@@ -79,9 +86,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About me",
+    "title": "Resume",
     "section": "",
-    "text": "Kevin Correia\n\n\nSkills\n\n\nPython\n\n\nFront-end Development\n\n\nTeamwork\n\n\nTrilingual: English, Spanish and Portuguese\n\n\nJava\n\n\nC#\n\n\n\n\nEducation\nBachelor of Science in Computer Science Brigham Young University – Idaho\nCertificate - Web and Computer Programming Brigham Young University – Idaho\nMarkDown Basics\n\n\n\n\n Back to top"
+    "text": "Kevin Correia\n\n\nSkills\n\n\nPython\n\n\nFront-end Development\n\n\nTeamwork\n\n\nTrilingual: English, Spanish and Portuguese\n\n\nJava\n\n\nC#\n\n\n\n\nExperience\nAdministration and IT Census Agent\nIBGE (Brazilian Institute of Geography and Statistics)\n\n\nEducation\nBachelor of Science in Computer Science Brigham Young University – Idaho\nCertificate - Web and Computer Programming Brigham Young University – Idaho\nDuring this certification I developed skills in functional programming (using Python), Front-End development (HTML, CSS and JS), and Object-Oriented Programming (using C#).\nMarkDown Basics\n\n\n\n\n Back to top"
   },
   {
     "objectID": "resume.html",
