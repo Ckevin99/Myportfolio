@@ -5,12 +5,12 @@ website:
   title: "Kevin Correia Science Portfolio"
   favicon: Images/favicon.png
   back-to-top-navigation: true
-  repo-url: https://github.com/Ckevin99/Myportifolio
+  repo-url: https://github.com/Ckevin99/Myportfolio
   #repo-actions: [issue] #if you want to allow others to report issues on your site uncomment this line
 
   page-footer: 
     border: true
-    left: "Kevin Correia 2023©"
+    left: "Kevin Correia 2024©"
     right: 
       - icon: linkedin
         href: https://www.linkedin.com/in/kevincorreia99/
