@@ -214,7 +214,14 @@
     "href": "Projects/project1.html#questiontask-3",
     "title": "Client Report - Project 1",
     "section": "QUESTION|TASK 3",
-    "text": "QUESTION|TASK 3\nMary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names. What trends do you notice?\nThey had a great surge on 1915 followed by a slight decrease in the utilization in the year 1928 until 1936, when they started to appear in a huge amount again, in the year 1954 it started to diminush and this trend is followed until the last data we had which is from 2014. During all period, a total of 4826973 people received one of these names.\n\n\nShow the code\nx =df.query(\"name == ['Mary','Martha','Peter','Paul']\")\nz =x['Total'].sum()\nchart1 = px.line(x, \nx=\"year\", y=\"Total\",\ntitle = \"Utilization of the names Mary, Martha, Peter, and Paul over 100 years\", color='name').update_layout(title_x=0.45).add_vline(x=1950, line_width=2, line_dash=\"dash\", annotation_text=\"Peak\", line_color=\"red\")\n\nchart1.show()\n\n\n                                                \n\n\ninclude figures in chunks and discuss your findings in the figure."
+    "text": "QUESTION|TASK 3\nMary, Martha, Peter, and Paul are all Christian names. From 1920 - 2000, compare the name usage of each of the four names. What trends do you notice?\nThey had a great surge on 1915 followed by a slight decrease in the utilization in the year 1928 until 1936, when they started to appear in a huge amount again, in the year 1954 it started to diminush and this trend is followed until the last data we had which is from 2014. During all period, a total of 4826973 people received one of these names.\n\n\nShow the code\nx =df.query(\"name == ['Mary','Martha','Peter','Paul']\")\nz =x['Total'].sum()\nchart1 = px.line(x, \nx=\"year\", y=\"Total\",\ntitle = \"Utilization of the names Mary, Martha, Peter, and Paul over 100 years\", color='name').update_layout(title_x=0.45).add_vline(x=1950, line_width=2, line_dash=\"dash\", annotation_text=\"Peak\", line_color=\"red\")\n\nchart1.show()"
+  },
+  {
+    "objectID": "Projects/project1.html#questiontask-4",
+    "href": "Projects/project1.html#questiontask-4",
+    "title": "Client Report - Project 1",
+    "section": "QUESTION|TASK 4",
+    "text": "QUESTION|TASK 4\nThink of a unique name from a famous movie. Plot the usage of that name and see how changes line up with the movie release. Does it look like the movie had an effect on usage?\nIt doesn’t like to have a strict relationship between the event of the raising in the name usage and the release of the movie, the name started to raise even before the movie, and the name usage had a similar pattern before. \n\n\nShow the code\na =df.query(\"name == 'Rocky'\")\n\nchart3 = px.line(a, \nx=\"year\", y=\"Total\",\ntitle = \"Rocky name usage over 100 years\", color='name').update_layout(title_x=0.45).add_vline(x=1976, line_width=2, line_dash=\"dash\", annotation_text=\"Release\", line_color=\"red\")\n\nchart3.show()"
   },
   {
     "objectID": "Projects/project3.html",
