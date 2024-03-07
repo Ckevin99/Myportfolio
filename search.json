@@ -93,7 +93,7 @@
     "href": "Projects/project3.html",
     "title": "Client Report - Project 3",
     "section": "",
-    "text": "In the baseball data 3 baseball players attended BYU-Idaho. The players with the best proportion of at bat and hits has a percentage of 35% of hits. New York Yankees is the team with the highest win rate and wages expenses. Analyzing the wages expenses and making a correlation with win rate, we can see that the budget influence significantly the win ratio.\n\n\nRead and format project data\n# Include and execute your code here\ncon = sqlite3.connect(\"lahmansbaseballdb.sqlite\")\n\n\nHighlight the Questions and Tasks",
+    "text": "In the baseball data 3 baseball players attended BYU-Idaho. The players with the best proportion of at bat and hits has a median of 35% of hits. New York Yankees is the team with the highest win rate and wages expenses. Analyzing the wages expenses and making a correlation with win rate, we can see that the budget influence significantly the win ratio.\n\n\nRead and format project data\n# Include and execute your code here\ncon = sqlite3.connect(\"lahmansbaseballdb.sqlite\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
       "Project 3"
@@ -104,7 +104,7 @@
     "href": "Projects/project3.html#elevator-pitch",
     "title": "Client Report - Project 3",
     "section": "",
-    "text": "In the baseball data 3 baseball players attended BYU-Idaho. The players with the best proportion of at bat and hits has a percentage of 35% of hits. New York Yankees is the team with the highest win rate and wages expenses. Analyzing the wages expenses and making a correlation with win rate, we can see that the budget influence significantly the win ratio.\n\n\nRead and format project data\n# Include and execute your code here\ncon = sqlite3.connect(\"lahmansbaseballdb.sqlite\")\n\n\nHighlight the Questions and Tasks",
+    "text": "In the baseball data 3 baseball players attended BYU-Idaho. The players with the best proportion of at bat and hits has a median of 35% of hits. New York Yankees is the team with the highest win rate and wages expenses. Analyzing the wages expenses and making a correlation with win rate, we can see that the budget influence significantly the win ratio.\n\n\nRead and format project data\n# Include and execute your code here\ncon = sqlite3.connect(\"lahmansbaseballdb.sqlite\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
       "Project 3"
@@ -115,7 +115,7 @@
     "href": "Projects/project3.html#questiontask-1",
     "title": "Client Report - Project 3",
     "section": "QUESTION|TASK 1",
-    "text": "QUESTION|TASK 1\nWrite an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.\nUsing as parameter players who studied on Byui, 3 players were found; one of them doesn’t have data from the salaries of teams.\n\n\nRead and format data\n# Include and execute your code here\nc=  \"\"\"\nSELECT DISTINCT cp.PlayerID\n, cp.schoolID\n, s.salary\n, s.yearID\n, s.team_ID\n\nFROM collegeplaying AS cp\nLEFT join salaries AS s \nON s.PlayerID = cp.PlayerID\n\n\nWHERE cp.schoolID = \"idbyuid\"\ngroup by cp.playerID\nORDER BY s.salary DESC\n\n\n\n\n\n\n\"\"\"\n\npd.read_sql(c, con)\n\n\n\n\n\n\n\n\n\nplayerID\nschoolID\nsalary\nyearID\nteam_ID\n\n\n\n\n0\nlindsma01\nidbyuid\n380000.0\n2007.0\n2546.0\n\n\n1\nstephga01\nidbyuid\n150000.0\n1997.0\n2258.0\n\n\n2\ncatetr01\nidbyuid\nNaN\nNaN\nNaN",
+    "text": "QUESTION|TASK 1\nWrite an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.\nUsing as parameter players who studied on Byui, 3 players were found; one of them doesn’t have data from the salaries and teams.\n\n\nRead and format data\n# Include and execute your code here\nc=  \"\"\"\nSELECT DISTINCT cp.PlayerID\n, cp.schoolID\n, s.salary\n, s.yearID\n, s.team_ID\n\nFROM collegeplaying AS cp\nLEFT join salaries AS s \nON s.PlayerID = cp.PlayerID\n\n\nWHERE cp.schoolID = \"idbyuid\"\ngroup by cp.playerID\nORDER BY s.salary DESC\n\n\n\n\n\n\n\"\"\"\n\npd.read_sql(c, con)\n\n\n\n\n\n\n\n\n\nplayerID\nschoolID\nsalary\nyearID\nteam_ID\n\n\n\n\n0\nlindsma01\nidbyuid\n380000.0\n2007.0\n2546.0\n\n\n1\nstephga01\nidbyuid\n150000.0\n1997.0\n2258.0\n\n\n2\ncatetr01\nidbyuid\nNaN\nNaN\nNaN",
     "crumbs": [
       "DS250 Projects",
       "Project 3"
