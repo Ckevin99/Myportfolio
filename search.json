@@ -375,7 +375,7 @@
     "href": "Projects/project4.html",
     "title": "Client Report - Project 4",
     "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ncon = sqlite3.connect('lahmansbaseballdb.sqlite')\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndwellings_ml = pd.read_csv(\"https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_ml/dwellings_ml.csv\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
       "Project 4"
@@ -386,7 +386,7 @@
     "href": "Projects/project4.html#elevator-pitch",
     "title": "Client Report - Project 4",
     "section": "",
-    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ncon = sqlite3.connect('lahmansbaseballdb.sqlite')\ndf = pd.read_csv(\"https://github.com/byuidatascience/data4names/raw/master/data-raw/names_year/names_year.csv\")\n\n\nHighlight the Questions and Tasks",
+    "text": "paste your elevator pitch here A SHORT (4-5 SENTENCES) PARAGRAPH THAT DESCRIBES KEY INSIGHTS TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS.\n\n\nRead and format project data\n# Include and execute your code here\ndwellings_ml = pd.read_csv(\"https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_ml/dwellings_ml.csv\")\n\n\nHighlight the Questions and Tasks",
     "crumbs": [
       "DS250 Projects",
       "Project 4"
@@ -397,7 +397,7 @@
     "href": "Projects/project4.html#questiontask-1",
     "title": "Client Report - Project 4",
     "section": "QUESTION|TASK 1",
-    "text": "QUESTION|TASK 1\nWrite an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\np = \"\"\"\n\nSELECT H, AB, YEARiD\nFROM batting\nLIMIT 2\n\"\"\"\n\nx = \"\"\"\nselect Playerid,AB/ H, H*1.0  / AB*1.0 ,yearid\nFrom batting \nwhere PlayerID = \"addybo01\" and\nYearID = 1871\n\n\"\"\"\npd.read_sql_query(p, con)\n\npd.read_sql_query(x, con)\n\n\n\n\n\n\n\n\n\nplayerID\nAB/ H\nH*1.0 / AB*1.0\nyearID\n\n\n\n\n0\naddybo01\n3\n0.271186\n1871\n\n\n\n\n\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q1 chart .cell execution_count=4}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q1 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=5}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
+    "text": "QUESTION|TASK 1\nCreate 2-3 charts that evaluate potential relationships between the home variables and before1980.\nSome of them are so much related and should be removed\n\n\nRead and format data\nmysubset = dwellings_ml.filter([\n\"abstrprd\",\n\"livearea\",\n\"finbsmnt\",\n\"basement\",\n\"yrbuilt\",\n\"stories\",\n\"nocars\",\n\"numbdrm\",\n\"numbaths\",\n\"sprice\",\n\"deduct\",\n\"netprice\",\n\"tasp\",\n\"smonth\",\n\"syear\",\n\"quality_C\",\n\"arcstyle_ONE-STORY\",\n\"syear\",\"before1980\"])\n\n\n\n\n# chart = px.scatter_matrix(mysubset, dimensions=[\"livearea\",   \"finbsmnt\", \"basement\"], color= \"before1980\")\n\n# chart.update_traces(diagonal_visible = False)\n\n# chart.show()\nmysubset2 = mysubset.drop(columns=\"before1980\").corr()\nchart2 = px.imshow(mysubset2, text_auto = True)\n\nchart2.show()\n\n\n                                                \n\n\n\n\nShow the code\nx_pred = mysubset.drop(mysubset.filter(regex= 'before1980|yrbuilt|parcel|syear|deduct|stories|smonth|nocars').columns, axis=1)\n\ny_pred = mysubset.filter(regex= 'before1980')\n\\\n\nx_train, x_test, y_train, y_test = train_test_split(x_pred, y_pred, test_size=.94, random_state= 76)\n\n\n\n\nShow the code\ntest = DecisionTreeClassifier()\npath = test.cost_complexity_pruning_path(x_train, y_train)\n\ntest.fit(x_train, y_train)\ny_pred = test.predict(x_test)\ny_probs = test.predict_proba(x_test)\nprint(metrics.classification_report(y_pred, y_test))\n\n\n              precision    recall  f1-score   support\n\n           0       0.78      0.72      0.75      8720\n           1       0.82      0.86      0.84     12819\n\n    accuracy                           0.81     21539\n   macro avg       0.80      0.79      0.80     21539\nweighted avg       0.81      0.81      0.81     21539\n\n\n\n\n\nShow the code\n# %%\ndf_features = pd.DataFrame(\n    {'f_names': x_train.columns, \n    'f_values': test.feature_importances_}).sort_values('f_values', ascending = False)\n\n\n\n\nShow the code\n#%%\nchart = px.bar(df_features.head(22),\n    x='f_values', \n    y='f_names'\n)\n\nchart.update_layout(yaxis={'categoryorder':'total ascending'})\n\n\n                                                \n\n\ninclude figures in chunks and discuss your findings in the figure.\n\n\nShow the code\nfrom sklearn.metrics import confusion_matrix\n\nprint(confusion_matrix(y_test, y_pred))\n\n\n[[ 6315  1752]\n [ 2405 11067]]",
     "crumbs": [
       "DS250 Projects",
       "Project 4"
@@ -408,7 +408,7 @@
     "href": "Projects/project4.html#questiontask-2",
     "title": "Client Report - Project 4",
     "section": "QUESTION|TASK 2",
-    "text": "QUESTION|TASK 2\nCOPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q2 chart .cell execution_count=7}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q2 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=8}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
+    "text": "QUESTION|TASK 2\nBuild a classification model labeling houses as being built “before 1980” or “during or after 1980”. Your goal is to reach or exceed 90% accuracy. Explain your final model choice (algorithm, tuning parameters, etc) and describe what other models you tried.\ntype your results and analysis here\n\n\nRead and format data\n\"abstrprd\",\n\"livearea\",\n\"finbsmnt\",\n\"basement\",\n\"yrbuilt\",\n\"stories\",\n\"nocars\",\n\"numbdrm\",\n\"numbaths\",\n\"sprice\",\n\"deduct\",\n\"netprice\",\n\"tasp\",\n\"smonth\",\n\"syear\",\n\"quality_C\",\n\"gartype_Att/Det\",\n\"gartype_att/CP\",\n\"gartype_det/CP\",\n\"arcstyle_ONE-STORY\",\n\"before1980\"\n\n\n'before1980'",
     "crumbs": [
       "DS250 Projects",
       "Project 4"
@@ -419,7 +419,18 @@
     "href": "Projects/project4.html#questiontask-3",
     "title": "Client Report - Project 4",
     "section": "QUESTION|TASK 3",
-    "text": "QUESTION|TASK 3\nCOPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE\ntype your results and analysis here\n\n\nRead and format data\n# Include and execute your code here\n\n\ninclude figures in chunks and discuss your findings in the figure.\n::: {#cell-Q3 chart .cell execution_count=10}\n\nplot example\n# Include and execute your code here\nchart = px.bar(df.head(200),\n    x=\"name\", \n    y=\"AK\"\n)\nchart.show()\n\n\n                                                \nMy useless chart\n\n:::\n::: {#cell-Q3 table .cell .tbl-cap-location-top tbl-cap=‘Not much of a table’ execution_count=11}\n\ntable example\n# Include and execute your code here\nmydat = df.head(1000)\\\n    .groupby('year')\\\n    .sum()\\\n    .reset_index()\\\n    .tail(10)\\\n    .filter([\"year\", \"AK\",\"AR\"])\n\ndisplay(mydat)\n\n\n\n\n\n\n\n\n\nyear\nAK\nAR\n\n\n\n\n96\n2006\n21.0\n183.0\n\n\n97\n2007\n28.0\n153.0\n\n\n98\n2008\n36.0\n212.0\n\n\n99\n2009\n34.0\n179.0\n\n\n100\n2010\n22.0\n196.0\n\n\n101\n2011\n41.0\n148.0\n\n\n102\n2012\n28.0\n140.0\n\n\n103\n2013\n26.0\n134.0\n\n\n104\n2014\n20.0\n114.0\n\n\n105\n2015\n28.0\n121.0\n\n\n\n\n\n\n:::",
+    "text": "QUESTION|TASK 3\nJustify your classification model by discussing the most important features selected by your model. This discussion should include a chart and a description of the features.\ntype your results and analysis here",
+    "crumbs": [
+      "DS250 Projects",
+      "Project 4"
+    ]
+  },
+  {
+    "objectID": "Projects/project4.html#questiontask-4",
+    "href": "Projects/project4.html#questiontask-4",
+    "title": "Client Report - Project 4",
+    "section": "QUESTION|TASK 4",
+    "text": "QUESTION|TASK 4\nDescribe the quality of your classification model using 2-3 different evaluation metrics. You also need to explain how to interpret each of the evaluation metrics you use.\ntype your results and analysis here",
     "crumbs": [
       "DS250 Projects",
       "Project 4"
